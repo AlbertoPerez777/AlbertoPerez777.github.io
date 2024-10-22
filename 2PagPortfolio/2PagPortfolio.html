@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Contacto - Alberto Pérez</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        #thankyou-message {
+            display: none; /* Ocultar el mensaje por defecto */
+            background-color: #333; /* Color de fondo oscuro */
+            color: #ffffff; /* Color de texto claro */
+            padding: 20px;
+            border-radius: 5px; /* Bordes redondeados */
+            margin-top: 20px; /* Espacio superior */
+            text-align: center; /* Centrar el texto */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <div id="main">
+        <div class="container medium">
+            <header class="major">
+                <h2>¿Tienes alguna pregunta o comentario?</h2>
+                <p>Envíame un mensaje y me pondré en contacto contigo lo antes posible.</p>
+            </header>
+
+            <form id="contact-form" method="post" action="send_email.php">
+                <div class="row">
+                    <div class="col-6 col-12-mobilep">
+                        <input type="text" name="name" placeholder="Nombre" required />
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <input type="email" name="email" placeholder="Correo Electrónico" required />
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" placeholder="Escribe tu mensaje aquí" rows="6" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions special">
+                            <li><input type="submit" value="Enviar Mensaje" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Mensaje de Agradecimiento -->
+            <div id="thankyou-message">
+                <h3>¡Gracias por tu mensaje!</h3>
+                <p>Tu mensaje ha sido enviado con éxito.</p>
+            </div>
+
+            <!-- Social Icons -->
+            <ul class="icons">
+                <li><a href="https://x.com/" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/login/?locale=es_ES" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F&hl=es-es&aa_click=8891933284028179" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.google.com/intl/es/gmail/about/" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+
+            <!-- Footer -->
+            <ul class="copyright">
+                <li>&copy; Alberto Pérez. Todos los derechos reservados.</li>
+                <li>Diseño: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+            // Mostrar el mensaje de agradecimiento
+            document.getElementById('thankyou-message').style.display = 'block';
+            // Opcional: Reiniciar el formulario
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
